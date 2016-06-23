@@ -133,6 +133,7 @@ $(document).ready(function(){
           <li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
           <li><a href="<?php echo $recurring_profile; ?>"><?php echo $text_recurring_profile; ?></a></li>
           <li><a href="<?php echo $return; ?>"><?php echo $text_return; ?></a></li>
+           <li><a href="<?php echo $cancel; ?>"><?php echo $text_cancel; ?></a></li>
           <li><a class="parent"><?php echo $text_customer; ?></a>
             <ul>
               <li><a href="<?php echo $customer; ?>"><?php echo $text_customer; ?></a></li>
@@ -188,6 +189,13 @@ $(document).ready(function(){
                   <li><a href="<?php echo $return_reason; ?>"><?php echo $text_return_reason; ?></a></li>
                 </ul>
               </li>
+              <li><a class="parent"><?php echo $text_cancel; ?></a>
+                <ul>
+                  <li><a href="<?php echo $cancel_status; ?>"><?php echo $text_cancel_status; ?></a></li>
+                  <li><a href="<?php echo $cancel_action; ?>"><?php echo $text_cancel_action; ?></a></li>
+                  <li><a href="<?php echo $cancel_reason; ?>"><?php echo $text_cancel_reason; ?></a></li>
+                </ul>
+              </li>
               <li><a href="<?php echo $country; ?>"><?php echo $text_country; ?></a></li>
               <li><a href="<?php echo $zone; ?>"><?php echo $text_zone; ?></a></li>
               <li><a href="<?php echo $geo_zone; ?>"><?php echo $text_geo_zone; ?></a></li>
@@ -213,6 +221,7 @@ $(document).ready(function(){
               <li><a href="<?php echo $report_sale_tax; ?>"><?php echo $text_report_sale_tax; ?></a></li>
               <li><a href="<?php echo $report_sale_shipping; ?>"><?php echo $text_report_sale_shipping; ?></a></li>
               <li><a href="<?php echo $report_sale_return; ?>"><?php echo $text_report_sale_return; ?></a></li>
+              <li><a href="<?php echo $report_sale_cancel; ?>"><?php echo $text_report_sale_cancel; ?></a></li>
               <li><a href="<?php echo $report_sale_coupon; ?>"><?php echo $text_report_sale_coupon; ?></a></li>
             </ul>
           </li>

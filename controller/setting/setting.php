@@ -38,6 +38,7 @@ class ControllerSettingSetting extends Controller {
 		$this->data['text_stock'] = $this->language->get('text_stock');
 		$this->data['text_affiliate'] = $this->language->get('text_affiliate');
 		$this->data['text_return'] = $this->language->get('text_return');
+		$this->data['text_cancel'] = $this->language->get('text_cancel');
 		$this->data['text_image_manager'] = $this->language->get('text_image_manager');
 		$this->data['text_browse'] = $this->language->get('text_browse');
 		$this->data['text_clear'] = $this->language->get('text_clear');	
@@ -94,7 +95,9 @@ class ControllerSettingSetting extends Controller {
 		$this->data['entry_affiliate'] = $this->language->get('entry_affiliate');
 		$this->data['entry_commission'] = $this->language->get('entry_commission');
 		$this->data['entry_return'] = $this->language->get('entry_return');
+		$this->data['entry_cancel'] = $this->language->get('entry_cancel');
 		$this->data['entry_return_status'] = $this->language->get('entry_return_status');
+		$this->data['entry_cancel_status'] = $this->language->get('entry_cancel_status');
 		$this->data['entry_logo'] = $this->language->get('entry_logo');
 		$this->data['entry_icon'] = $this->language->get('entry_icon');
 		$this->data['entry_image_category'] = $this->language->get('entry_image_category');
@@ -694,10 +697,26 @@ class ControllerSettingSetting extends Controller {
 			$this->data['config_return_status_id'] = $this->config->get('config_return_status_id');		
 		}
 
-		$this->load->model('localisation/return_status');
+		$this->load->model('jindru/cancel_status');
 
-		$this->data['return_statuses'] = $this->model_localisation_return_status->getReturnStatuses();	
-
+		$this->data['cancel_statuses'] = $this->model_jindru_cancel_status->getCancelStatuses();	
+		
+		if (isset($this->request->post['config_cancel_id'])) {
+			$this->data['config_cancel_id'] = $this->request->post['config_cancel_id'];
+		} else {
+			$this->data['config_cancel_id'] = $this->config->get('config_cancel_id');
+		}
+		
+		if (isset($this->request->post['config_cancel_status_id'])) {
+			$this->data['config_cancel_status_id'] = $this->request->post['config_cancel_status_id'];
+		} else {
+			$this->data['config_cancel_status_id'] = $this->config->get('config_cancel_status_id');
+		}
+		
+		$this->load->model('jindru/cancel_status');
+		
+		$this->data['cancel_statuses'] = $this->model_jindru_cancel_status->getCancelStatuses();
+		
 		$this->load->model('tool/image');
 
 		if (isset($this->request->post['config_logo'])) {

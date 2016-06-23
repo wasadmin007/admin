@@ -13,6 +13,7 @@ $_['text_checkout']                = 'Checkout';
 $_['text_stock']                   = 'Stock';
 $_['text_affiliate']               = 'Affiliates';
 $_['text_return']                  = 'Returns';
+$_['text_cancel']                  = 'Cancels';
 $_['text_image_manager']           = 'Image Manager';
 $_['text_browse']                  = 'Browse';
 $_['text_clear']                   = 'Clear';
@@ -71,6 +72,8 @@ $_['entry_affiliate']              = 'Affiliate Terms:<br /><span class="help">F
 $_['entry_commission']             = 'Affiliate Commission (%):<br /><span class="help">The default affiliate commission percentage.</span>';
 $_['entry_return']                 = 'Return Terms:<br /><span class="help">Forces people to agree to terms before an return account can be created.</span>';
 $_['entry_return_status']          = 'Return Status:<br /><span class="help">Set the default return status when an returns request is submitted.</span>';
+$_['entry_cancel']                 = 'Cancel Terms:<br /><span class="help">Forces people to agree to terms before an cancel account can be created.</span>';
+$_['entry_cancel_status']          = 'Cancel Status:<br /><span class="help">Set the default cancel status when an cancels request is submitted.</span>';
 $_['entry_logo']                   = 'Store Logo:';
 $_['entry_icon']                   = 'Icon:<br /><span class="help">The icon should be a PNG that is 16px x 16px.</span>';
 $_['entry_image_category']         = 'Category Image Size:';

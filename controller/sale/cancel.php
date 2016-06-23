@@ -1033,7 +1033,7 @@ class ControllerSaleCancel extends Controller {
 
 			$this->data['cancel_action_id'] = $cancel_info['cancel_action_id'];
 
-			$this->data['cancel_statuses'] = $this->model_jindru_cancel_status->getcancelStatuses();				
+			$this->data['cancel_statuses'] = $this->model_jindru_cancel_status->getCancelStatuses();				
 
 			$this->data['cancel_status_id'] = $cancel_info['cancel_status_id'];
 

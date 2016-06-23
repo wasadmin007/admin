@@ -601,6 +601,35 @@
                 </select></td>
             </tr>
           </table>
+          <h2><?php echo $text_cancel; ?></h2>
+          <table class="form">
+            <tr>
+              <td><?php echo $entry_cancel; ?></td>
+              <td><select name="config_cancel_id">
+                  <option value="0"><?php echo $text_none; ?></option>
+                  <?php foreach ($informations as $information) { ?>
+                  <?php if ($information['information_id'] == $config_cancel_id) { ?>
+                  <option value="<?php echo $information['information_id']; ?>" selected="selected"><?php echo $information['title']; ?></option>
+                  <?php } else { ?>
+                  <option value="<?php echo $information['information_id']; ?>"><?php echo $information['title']; ?></option>
+                  <?php } ?>
+                  <?php } ?>
+                </select></td>
+            </tr>
+            <tr>
+              <td><?php echo $entry_cancel_status; ?></td>
+              <td><select name="config_cancel_status_id">
+                  <?php foreach ($cancel_statuses as $cancel_status) { ?>
+                  <?php if ($cancel_status['cancel_status_id'] == $config_cancel_status_id) { ?>
+                  <option value="<?php echo $cancel_status['cancel_status_id']; ?>" selected="selected"><?php echo $cancel_status['name']; ?></option>
+                  <?php } else { ?>
+                  <option value="<?php echo $cancel_status['cancel_status_id']; ?>"><?php echo $cancel_status['name']; ?></option>
+                  <?php } ?>
+                  <?php } ?>
+                </select></td>
+            </tr>
+          </table>
+
         </div>
         <div id="tab-image">
           <table class="form">

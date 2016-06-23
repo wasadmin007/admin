@@ -70,6 +70,7 @@ class ControllerCommonHeader extends Controller {
 		$this->data['text_report_sale_tax'] = $this->language->get('text_report_sale_tax');
 		$this->data['text_report_sale_shipping'] = $this->language->get('text_report_sale_shipping');
 		$this->data['text_report_sale_return'] = $this->language->get('text_report_sale_return');
+		$this->data['text_report_sale_cancel'] = $this->language->get('text_report_sale_cancel');
 		$this->data['text_report_sale_coupon'] = $this->language->get('text_report_sale_coupon');
 		$this->data['text_report_product_viewed'] = $this->language->get('text_report_product_viewed');
 		$this->data['text_report_product_purchased'] = $this->language->get('text_report_product_purchased');
@@ -79,6 +80,7 @@ class ControllerCommonHeader extends Controller {
 		$this->data['text_report_customer_credit'] = $this->language->get('text_report_customer_credit');
 		$this->data['text_report_affiliate_commission'] = $this->language->get('text_report_affiliate_commission');
 		$this->data['text_report_sale_return'] = $this->language->get('text_report_sale_return');
+		$this->data['text_report_sale_cancel'] = $this->language->get('text_report_sale_cancel');
 		$this->data['text_report_product_viewed'] = $this->language->get('text_report_product_viewed');
 		$this->data['text_report_customer_order'] = $this->language->get('text_report_customer_order');
 		$this->data['text_review'] = $this->language->get('text_review');
@@ -86,6 +88,10 @@ class ControllerCommonHeader extends Controller {
 		$this->data['text_return_action'] = $this->language->get('text_return_action');
 		$this->data['text_return_reason'] = $this->language->get('text_return_reason');
 		$this->data['text_return_status'] = $this->language->get('text_return_status');
+		$this->data['text_cancel'] = $this->language->get('text_cancel');
+		$this->data['text_cancel_action'] = $this->language->get('text_cancel_action');
+		$this->data['text_cancel_reason'] = $this->language->get('text_cancel_reason');
+		$this->data['text_cancel_status'] = $this->language->get('text_cancel_status');
 		$this->data['text_support'] = $this->language->get('text_support');
 		$this->data['text_shipping'] = $this->language->get('text_shipping');
 		$this->data['text_setting'] = $this->language->get('text_setting');
@@ -134,6 +140,10 @@ class ControllerCommonHeader extends Controller {
 			$this->data['backup'] = $this->url->link('tool/backup', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['banner'] = $this->url->link('design/banner', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['category'] = $this->url->link('catalog/category', 'token=' . $this->session->data['token'], 'SSL');
+			$this->data['cancel'] = $this->url->link('sale/cancel', 'token=' . $this->session->data['token'], 'SSL');
+			$this->data['cancel_action'] = $this->url->link('jindru/cancel_action', 'token=' . $this->session->data['token'], 'SSL');
+			$this->data['cancel_reason'] = $this->url->link('jindru/cancel_reason', 'token=' . $this->session->data['token'], 'SSL');
+			$this->data['cancel_status'] = $this->url->link('jindru/cancel_status', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['country'] = $this->url->link('localisation/country', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['coupon'] = $this->url->link('sale/coupon', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['currency'] = $this->url->link('localisation/currency', 'token=' . $this->session->data['token'], 'SSL');
@@ -165,6 +175,7 @@ class ControllerCommonHeader extends Controller {
 			$this->data['report_sale_tax'] = $this->url->link('report/sale_tax', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['report_sale_shipping'] = $this->url->link('report/sale_shipping', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['report_sale_return'] = $this->url->link('report/sale_return', 'token=' . $this->session->data['token'], 'SSL');
+			$this->data['report_sale_cancel'] = $this->url->link('report/sale_cancel', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['report_sale_coupon'] = $this->url->link('report/sale_coupon', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['report_product_viewed'] = $this->url->link('report/product_viewed', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['report_product_purchased'] = $this->url->link('report/product_purchased', 'token=' . $this->session->data['token'], 'SSL');
@@ -177,7 +188,8 @@ class ControllerCommonHeader extends Controller {
 			$this->data['return'] = $this->url->link('sale/return', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['return_action'] = $this->url->link('localisation/return_action', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['return_reason'] = $this->url->link('localisation/return_reason', 'token=' . $this->session->data['token'], 'SSL');
-			$this->data['return_status'] = $this->url->link('localisation/return_status', 'token=' . $this->session->data['token'], 'SSL');			
+			$this->data['return_status'] = $this->url->link('localisation/return_status', 'token=' . $this->session->data['token'], 'SSL');	
+			
 			$this->data['shipping'] = $this->url->link('extension/shipping', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['setting'] = $this->url->link('setting/store', 'token=' . $this->session->data['token'], 'SSL');
 			$this->data['store'] = HTTP_CATALOG;
