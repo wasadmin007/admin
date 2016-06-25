@@ -697,9 +697,9 @@ class ControllerSettingSetting extends Controller {
 			$this->data['config_return_status_id'] = $this->config->get('config_return_status_id');		
 		}
 
-		$this->load->model('jindru/cancel_status');
+		$this->load->model('localisation/return_status');
 
-		$this->data['cancel_statuses'] = $this->model_jindru_cancel_status->getCancelStatuses();	
+		$this->data['return_statuses'] = $this->model_localisation_return_status->getReturnStatuses();	
 		
 		if (isset($this->request->post['config_cancel_id'])) {
 			$this->data['config_cancel_id'] = $this->request->post['config_cancel_id'];
