@@ -1075,7 +1075,13 @@ class ControllerSaleOrder extends Controller {
 		
 		$this->load->model('localisation/country');
 		
-		$this->data['countries'] = $this->model_localisation_country->getCountries();															
+		$this->data['countries'] = $this->model_localisation_country->getCountries();	
+		$this->load->model('localisation/zone');
+		
+		$this->data['zones'] = $this->model_localisation_zone->getZones();
+		$this->load->model('localisation/city');
+		
+		$this->data['cities'] = $this->model_localisation_city->getCities();
 		
     	if (isset($this->request->post['shipping_method'])) {
       		$this->data['shipping_method'] = $this->request->post['shipping_method'];
@@ -1272,6 +1278,8 @@ class ControllerSaleOrder extends Controller {
 			$this->load->model('localisation/country');
 			
 			$country_info = $this->model_localisation_country->getCountry($this->request->post['shipping_country_id']);
+			$this->load->model('localisation/zone');
+			$zone_info = $this->model_localisation_zone->getZone($this->request->post['shipping_zone_id']);
 			
 			if ($country_info && $country_info['postcode_required'] && (utf8_strlen($this->request->post['shipping_postcode']) < 2) || (utf8_strlen($this->request->post['shipping_postcode']) > 10)) {
 				$this->error['shipping_postcode'] = $this->language->get('error_postcode');

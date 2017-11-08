@@ -167,6 +167,17 @@
             <tr>
               <td><span class="required">*</span> <?php echo $entry_zone; ?></td>
               <td><select name="payment_zone_id">
+             		<option value=""><?php echo $text_select; ?></option>
+                  <?php foreach ($zones as $zone) { ?>
+                  <?php if ($zone['zone_id'] == $payment_zone_id) { ?>
+                  <option value="<?php echo $zone['zone_id']; ?>" selected="selected"><?php echo $zone['name']; ?></option>
+                  <?php } else { ?>
+                  <option value="<?php echo $zone['zone_id']; ?>"><?php echo $zone['name']; ?></option>
+                  <?php } ?>
+                  <?php } ?>
+               
+              
+              
                 </select>
                 <?php if ($error_payment_zone) { ?>
                 <span class="error"><?php echo $error_payment_zone; ?></span>
@@ -244,6 +255,15 @@
             <tr>
               <td><span class="required">*</span> <?php echo $entry_zone; ?></td>
               <td><select name="shipping_zone_id">
+                 <option value=""><?php echo $text_select; ?></option>
+                  <?php foreach ($zones as $zone) { ?>
+                  <?php if ($zone['zone_id'] == $shipping_zone_id) { ?>
+                  <option value="<?php echo $zone['zone_id']; ?>" selected="selected"><?php echo $zone['name']; ?></option>
+                  <?php } else { ?>
+                  <option value="<?php echo $zone['zone_id']; ?>"><?php echo $zone['name']; ?></option>
+                  <?php } ?>
+                  <?php } ?>
+              
                 </select>
                 <?php if ($error_shipping_zone) { ?>
                 <span class="error"><?php echo $error_shipping_zone; ?></span>
